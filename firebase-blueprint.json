@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "Post": {
+      "title": "Un post sur le forum communautaire",
+      "description": "Représente une discussion initiée par un agriculteur.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Le titre du sujet" },
+        "content": { "type": "string", "description": "Le corps du message" },
+        "author": { "type": "string", "description": "Le nom ou ID de l'auteur" },
+        "authorId": { "type": "string", "description": "L'UID du créateur" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "likes": { "type": "integer" },
+        "commentsCount": { "type": "integer" }
+      },
+      "required": ["title", "content", "author", "authorId", "createdAt"]
+    },
+    "Comment": {
+      "title": "Un commentaire sous un post",
+      "description": "Réponse d'un membre de la communauté.",
+      "type": "object",
+      "properties": {
+        "postId": { "type": "string" },
+        "content": { "type": "string" },
+        "author": { "type": "string" },
+        "authorId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["postId", "content", "author", "authorId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/posts/{postId}": {
+      "schema": "Post",
+      "description": "Collection principale des discussions"
+    },
+    "/posts/{postId}/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Sous-collection pour les réponses"
+    }
+  }
+}

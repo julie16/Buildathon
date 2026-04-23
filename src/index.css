@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  --color-agro-forest: #1B4332;
+  --color-agro-emerald: #2D6A4F;
+  --color-agro-earth: #BC6C25;
+  --color-agro-sand: #FEFAE0;
+  --color-agro-clay: #D4A373;
+  --color-agro-lime: #D9ED82;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-agro-forest font-sans antialiased;
+  }
+}
+
+.agro-card {
+  @apply bg-white rounded-3xl p-6 shadow-sm border border-agro-clay/10;
+}
+
+.agro-button-primary {
+  @apply bg-agro-lime text-agro-forest px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95 hover:bg-white hover:text-agro-forest;
+}
+
+.agro-button-outline {
+  @apply border border-white text-white px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95 hover:bg-white hover:text-agro-forest;
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 text-white;
+}
+
+.markdown-body {
+  @apply text-agro-forest leading-relaxed;
+}
+
+
+.markdown-body h3 {
+  @apply font-bold text-lg mt-4 mb-2 text-agro-earth;
+}
+
+.markdown-body p {
+  @apply mb-3;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside mb-3;
+}
+

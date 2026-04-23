@@ -1,0 +1,12 @@
+{
+  "name": "AgroConseil",
+  "description": "Assistant agricole intelligent pour l'Afrique de l'Ouest : diagnostic de cultures par IA, calendriers de semis personnalisés et forum communautaire.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "AI Crop Diagnosis",
+    "Agricultural Calendar",
+    "Community Forum"
+  ]
+}
